@@ -16,13 +16,48 @@ import {
 } from "lucide-react";
 
 const mainNav = [
-  { label: "Dashboard", href: "/dashboard", icon: LayoutGrid },
-  { label: "Assets", href: "/assets", icon: Box },
-  { label: "Tickets", href: "/tickets", icon: Ticket },
-  { label: "Chat", href: "/chat", icon: MessageCircle },
-  { label: "Employees", href: "/employees", icon: Users },
-  { label: "Vendors", href: "/vendors", icon: Store },
-  { label: "Reports", href: "/reports", icon: BarChart3 },
+  {
+    label: "Dashboard",
+    href: "/dashboard",
+    icon: "/dashboard-layout-svgrepo-com.svg",
+    type: "svg",
+  },
+  {
+    label: "Assets",
+    href: "/assets",
+    icon: "/box-svgrepo-com.svg",
+    type: "svg",
+  },
+  {
+    label: "Tickets",
+    href: "/tickets",
+    icon: Ticket,
+    type: "lucide",
+  },
+  {
+    label: "Chat",
+    href: "/chat",
+    icon: MessageCircle,
+    type: "lucide",
+  },
+  {
+    label: "Employees",
+    href: "/employees",
+    icon: Users,
+    type: "lucide",
+  },
+  {
+    label: "Vendors",
+    href: "/vendors",
+    icon: Store,
+    type: "lucide",
+  },
+  {
+    label: "Reports",
+    href: "/reports",
+    icon: "/graph-svgrepo-com.svg",
+    type: "svg",
+  },
 ];
 
 const bottomNav = [
@@ -65,9 +100,11 @@ export default function Sidebar({
         <div className="sidebar-logo">
           <div className="sidebar-logo-content">
             <div className="sidebar-logo-icon">
-              <Box
-                className="icon-md"
-                strokeWidth={2.25}
+              <img
+                src="/Logo.png"
+                alt="AssetHub"
+                width={32}
+                height={32}
               />
             </div>
 
@@ -90,7 +127,7 @@ export default function Sidebar({
 
         <nav className="sidebar-nav">
           {mainNav.map(
-            ({ label, href, icon: Icon }) => {
+            ({ label, href, icon, type }) => {
               const active = isActive(href);
 
               return (
@@ -101,10 +138,23 @@ export default function Sidebar({
                   className={`sidebar-link ${active ? "active" : ""
                     }`}
                 >
-                  <Icon
-                    className="icon-md"
-                    strokeWidth={1.9}
-                  />
+                  {type === "svg" ? (
+                    <img
+                      src={icon as string}
+                      alt=""
+                      className="sidebar-svg-icon"
+                    />
+                  ) : (
+                    (() => {
+                      const Icon = icon;
+                      return (
+                        <Icon
+                          className="icon-md"
+                          strokeWidth={1.9}
+                        />
+                      );
+                    })()
+                  )}
 
                   {label}
                 </Link>

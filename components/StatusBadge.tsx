@@ -1,15 +1,21 @@
-const STYLES: Record<string, string> = {
-  "In-Use": "bg-blue-50 text-blue-600",
-  Available: "bg-green-50 text-green-600",
-  Maintenance: "bg-orange-50 text-orange-600",
-  Scrap: "bg-neutral-100 text-neutral-500",
+const STATUS_CLASSES: Record<string, string> = {
+  "In-Use": "status-in-use",
+  Available: "status-available",
+  Maintenance: "status-maintenance",
+  Scrap: "status-scrap",
 };
 
-export default function StatusBadge({ status }: { status: string }) {
+export default function StatusBadge({
+  status,
+}: {
+  status: string;
+}) {
+  const statusClass =
+    STATUS_CLASSES[status] ?? "status-scrap";
+
   return (
     <span
-      className={`inline-flex items-center rounded-md px-2.5 py-1 text-[13px] font-medium ${STYLES[status] ?? "bg-neutral-100 text-neutral-500"
-        }`}
+      className={`status-badge ${statusClass}`}
     >
       {status}
     </span>

@@ -1121,3 +1121,31 @@ body {
   width: 24px;
   height: 24px;
 }
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #d8e5fb;
+  border-radius: 4px;
+  background: #c4dbff;
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+}
+
+.checkbox:checked {
+  background: #1f66ff;
+  border-color: #2563eb;
+}
+
+.checkbox:checked::after {
+  content: "";
+  width: 7px;
+  height: 4px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+  margin-top: -2px;
+}

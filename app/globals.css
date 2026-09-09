@@ -1642,90 +1642,55 @@ body {
 }
 
 /* =========================================================
-   FINAL DESIGN OVERRIDES
-   These rules intentionally come last so the desktop
-   Asset List and Asset Details screens share the same grid.
+   FINAL DESKTOP DESIGN OVERRIDES
+   IMPORTANT: desktop only. Mobile/tablet rules above remain
+   untouched so responsive behavior is preserved.
    ========================================================= */
 
 @media (min-width: 1024px) {
 
-  /* ---------- APP GRID ---------- */
-
-  .app-shell {
-    min-height: 100vh;
-    overflow: hidden;
-  }
+  /* ---------- APP / SIDEBAR ---------- */
 
   .sidebar {
-    top: 18px !important;
-    left: 18px !important;
-    bottom: 18px !important;
-
     width: 202px !important;
     min-width: 202px !important;
     max-width: 202px !important;
 
-    border-radius: 18px !important;
+    top: 18px !important;
+    left: 18px !important;
+    bottom: 18px !important;
   }
 
   .app-content {
     margin-left: 220px !important;
-    min-width: 0 !important;
   }
 
   .app-main {
-    padding: 0 18px 20px 18px !important;
-    min-width: 0;
+    padding: 20px 18px 20px 0 !important;
   }
 
 
   /* ---------- TOP BAR ---------- */
 
   .topbar {
-    width: calc(100% - 36px) !important;
+    width: calc(100% - 18px) !important;
     height: 72px !important;
 
-    margin: 18px !important;
+    margin: 18px 18px 18px 0 !important;
     padding: 8px 16px !important;
-
-    border-radius: 20px !important;
-  }
-
-  .topbar-search {
-    width: 505px !important;
-    height: 38px !important;
-  }
-
-  .topbar-actions {
-    gap: 8px !important;
   }
 
 
-  /* =======================================================
-     ASSET LIST PAGE
-     ======================================================= */
+  /* ---------- ASSETS PAGE ---------- */
 
   .assets-title-row {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-
-  .assets-tabs {
-    gap: 22px;
-  }
-
-  .assets-tab.active {
-    font-size: 20px;
-  }
-
-  .assets-tab:not(.active) {
-    font-size: 14px;
+    width: 100% !important;
+    margin-bottom: 16px !important;
   }
 
   .action-buttons {
     margin-right: 0 !important;
     gap: 16px !important;
-    flex-shrink: 0;
   }
 
   .action-button {
@@ -1744,38 +1709,25 @@ body {
     margin-bottom: 16px !important;
   }
 
-  .filter-buttons {
-    gap: 10px;
-  }
 
-  .asset-table-wrapper {
-    width: 100%;
-    border-radius: 12px;
-  }
-
-
-  /* =======================================================
-     ASSET DETAILS PAGE
-     ======================================================= */
+  /* ---------- DETAIL PAGE ---------- */
 
   .detail-tabs {
     width: 100% !important;
-    height: 42px !important;
+    height: 38px !important;
 
     margin: 0 0 18px !important;
     padding: 2px !important;
-
-    border-radius: 10px !important;
   }
 
   .detail-tab {
-    height: 38px !important;
+    height: 34px !important;
     font-size: 12px !important;
   }
 
   .detail-header {
     width: 100% !important;
-    height: 54px !important;
+    min-width: 0 !important;
 
     margin-bottom: 18px !important;
   }
@@ -1785,19 +1737,16 @@ body {
   }
 
   .detail-image {
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .detail-title {
-    font-size: 18px !important;
-    line-height: 21px !important;
-    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
   }
 
   .detail-id {
-    margin-top: 2px !important;
     font-size: 12px !important;
   }
 
@@ -1812,10 +1761,7 @@ body {
     font-size: 12px !important;
   }
 
-  .detail-action.approve {
-    min-width: 81px !important;
-  }
-
+  .detail-action.approve,
   .detail-action.reject {
     min-width: 81px !important;
   }
@@ -1828,15 +1774,13 @@ body {
     width: 100% !important;
 
     margin-bottom: 18px !important;
-    padding: 18px 18px !important;
+    padding: 18px !important;
 
     border-radius: 11px !important;
-    background: #f3f7fd !important;
   }
 
   .detail-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-
     column-gap: 70px !important;
     row-gap: 20px !important;
   }
@@ -1849,20 +1793,5 @@ body {
   .detail-field-value {
     font-size: 12px !important;
     line-height: 1.4 !important;
-  }
-}
-
-
-/* =========================================================
-   KEEP MOBILE BEHAVIOUR INTACT
-   ========================================================= */
-
-@media (max-width: 1023px) {
-  .app-content {
-    margin-left: 0 !important;
-  }
-
-  .app-main {
-    padding: 16px 12px !important;
   }
 }

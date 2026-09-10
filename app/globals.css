@@ -2505,3 +2505,128 @@ body {
     font-size: 11px !important;
   }
 }
+
+
+/* =========================================================
+   DESKTOP-ONLY FINAL SPACING FIX
+   DO NOT AFFECT TABLET OR MOBILE
+   ========================================================= */
+
+@media (min-width: 1024px) {
+
+  /* Sidebar: target design width and position */
+  .sidebar {
+    top: 18px !important;
+    left: 18px !important;
+    bottom: 18px !important;
+
+    width: 202px !important;
+    min-width: 202px !important;
+    max-width: 202px !important;
+  }
+
+  /* Main column begins immediately after the sidebar.
+     18px padding creates the visual gap to the content. */
+  .app-content {
+    margin-left: 220px !important;
+    min-width: 0 !important;
+  }
+
+  .app-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+
+    padding: 0 18px 20px !important;
+  }
+
+  /* Topbar aligns exactly with the main content edges */
+  .topbar {
+    box-sizing: border-box !important;
+
+    width: calc(100% - 36px) !important;
+    height: 72px !important;
+
+    margin: 18px !important;
+    padding: 8px 16px !important;
+  }
+
+  /* ---------- ASSET LIST ---------- */
+
+  .assets-title-row {
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .action-buttons {
+    margin-right: 0 !important;
+    gap: 16px !important;
+  }
+
+  .action-button {
+    height: 36px !important;
+  }
+
+  .action-button.secondary {
+    width: 90px !important;
+  }
+
+  .action-button.primary {
+    width: 112px !important;
+  }
+
+  .filters {
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .asset-table-wrapper {
+    width: 100% !important;
+  }
+
+  /* ---------- ASSET DETAILS ---------- */
+
+  .detail-tabs {
+    width: 100% !important;
+    height: 38px !important;
+
+    margin: 0 0 18px !important;
+    padding: 2px !important;
+  }
+
+  .detail-tab {
+    height: 34px !important;
+    font-size: 12px !important;
+  }
+
+  .detail-header {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin-bottom: 18px !important;
+  }
+
+  .detail-actions {
+    flex-shrink: 0 !important;
+    gap: 18px !important;
+  }
+
+  .detail-action {
+    height: 36px !important;
+    padding: 0 16px !important;
+  }
+
+  .detail-section {
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    margin-bottom: 18px !important;
+    padding: 18px !important;
+  }
+
+  .detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 70px !important;
+    row-gap: 20px !important;
+  }
+}
